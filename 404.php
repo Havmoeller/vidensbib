@@ -13,10 +13,6 @@ get_header(); ?>
     <div class="row" role="content">
     	<h1 class="text-center">Sorry, we couldn't find what you were looking for.</h1>
     </div>
-    <div class="row">
-    	<div class="large-6 large-centered medium-6 medium-centered columns">
-    		<a id='goback' class='button small secondary expand'href="<?php echo esc_url( home_url( '/' ) ); ?>"> Go back to the frontpage </a>
-    	</div>
-    </div>
-</section> <!-- strategies -->
+</section>
+
 <?php get_footer(); ?>

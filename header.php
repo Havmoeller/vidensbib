@@ -23,34 +23,17 @@
 <!-- Body -->
 <body <?php body_class(); ?>>
 	<div id="page">
-
 		<header id="topbar">
-			<div class="row">
 				<!-- Desktop-menu -->
-				<div class="large-9 columns show-for-large-up">
+				<div>
 						<?php wp_nav_menu( array(
 							'menu' => 'Hovedmenu',
 							'container' => '',
 							'container_class' 	=> '',
 							'container_id'    	=> '',
-							'menu_class'      	=> 'right ',
+							'menu_class'      	=> '',
 							'menu_id'			=> 'desktop-menu',
 							'depth'           	=> 0
 						)); ?>
 				</div>
-			</div> <!-- row -->
-
-				<!-- Mobile menu -->
-			<div class="show-for-medium-down">
-				<?php wp_nav_menu( array(
-					'menu' => 'Hovedmenu',
-					'container' => '',
-					'container_class' 	=> '',
-					'container_id'    	=> '',
-					'menu_class'      	=> '',
-					'menu_id'			=> 'mobile-menu',
-					'depth'           	=> 0,
-				)); ?>
-			</div>
-				<!-- Header end -->
 		</header> <!-- Topbar  -->

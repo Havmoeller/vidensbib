@@ -12,7 +12,7 @@
 get_header(); ?>
 
     <!-- Main Content -->
-    <div class="large-9 columns" role="main">
+    <section role="main">
 
 		<?php if ( have_posts() ) : ?>
 
@@ -22,14 +22,12 @@ get_header(); ?>
 
 		<?php else : ?>
 
-			<h2><?php _e('No posts.', 'foundation' ); ?></h2>
-			<p class="lead"><?php _e('Sorry about this, I couldn\'t seem to find what you were looking for.', 'foundation' ); ?></p>
+			<h2>Ingen posts</h2>
 			
 		<?php endif; ?>
 
-		<?php foundation_pagination(); ?>
 
-    </div>
+    </section>
     <!-- End Main Content -->
 
 <?php get_sidebar(); ?>
