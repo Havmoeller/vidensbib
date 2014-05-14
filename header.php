@@ -33,7 +33,6 @@
 							'container_id'    	=> '',
 							'menu_class'      	=> '',
 							'menu_id'			=> 'desktop-menu',
-							'depth'           	=> 0
 						)); ?>
 				</div>
 		</header> <!-- Topbar  -->

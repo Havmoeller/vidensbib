@@ -101,7 +101,7 @@ gulp.task('browser-sync', function() {
 /***************************************
 				TASKS
 ***************************************/
-gulp.task('default', ['sass', 'js-lint', 'js-uglify', 'js-concat', 'browser-sync'], function () {  
+gulp.task('default', ['sass', 'js-lint', 'js-uglify', 'js-concat'], function () {  
     gulp.watch(target.sass_src, ['sass']);
     gulp.watch(target.js_lint_src, ['js-lint']);
     gulp.watch(target.js_uglify_src, ['js-uglify']);

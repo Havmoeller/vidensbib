@@ -10,10 +10,6 @@
 	 * @since Foundation, for WordPress 4.0
 	 */
 
-
-
-	endif;
-
 	/**
 	 * Enqueue Scripts and Styles for Front-End
 	 */
@@ -71,7 +67,7 @@
 	if ( ! function_exists( 'menus' ) ) :
 
 	// Register wp_nav_menus
-	function foundation_menus() {
+	function menus() {
 		register_nav_menus(
 			array(
 				'header-menu' => __( 'Hovedmenu', '' )
@@ -128,7 +124,7 @@
 	                $words = explode(' ', $text, $excerpt_length + 1);
 	                if (count($words)> $excerpt_length) {
 	                        array_pop($words);
-	                        array_push($words, '<br><br><a href="'.get_permalink($post->ID) .'" class="button secondary small">' . __('Continue Reading', 'foundation') . '</a>');
+	                        array_push($words, '<br><br><a href="'.get_permalink($post->ID) .'" class="button secondary small expand">' . __('Continue Reading', 'foundation') . '</a>');
 	                        $text = implode(' ', $words);
 	                }
 	        }
@@ -136,7 +132,7 @@
 	}
 
 	remove_filter('get_the_excerpt', 'wp_trim_excerpt');
-	add_filter('get_the_excerpt', 'foundation_excerpt');
+	add_filter('get_the_excerpt', 'custom_excerpt');
 
 	endif;
 
@@ -219,5 +215,5 @@
 	}
 	add_action( 'admin_head', 'admin_icon' );
 
-
+	require('inc/cpt.php');
 	?>
