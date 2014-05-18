@@ -4,6 +4,7 @@
  */
 ?>
 <!DOCTYPE html>
+<?php get_template_part( 'inc/frontend-posting' ); ?>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!-->
 <html class="no-js" <?php language_attributes(); ?>> <!--<![endif]-->
@@ -24,18 +25,26 @@
 <body <?php body_class(); ?>>
 	<div id="page">
 		<header id="header">
-				<?php
-				if ( is_user_logged_in() ) { ?>
-					<span>
-						<a href="#" data-reveal-id="newPost" class="button">Ny Erfaring + </a>
-					</span>
-				<?php } else { ?>
-				    <span>
-						<a href="<?php echo wp_login_url( get_permalink() ); ?>"  class="button">Login</a>
-					</span>
-				<?php }
-				?>
+			<div class="row">
+				<div class="large-3 columns">
+					<?php
+					if ( is_user_logged_in() ) { ?>
+						<span>
+							<a href="#" id="newPostButton">+</a>
+						</span>
+					<?php } else { ?>
+					    <span>
+							<a href="<?php echo wp_login_url( get_permalink() ); ?>"  class="button">Login</a>
+						</span>
+					<?php }
+					?>
+				</div>
+				<div class="large-5 large-pull-4 columns">
+					<a href="<?php echo home_url(); ?>"><h1 class="text-center">Vidensbanken</h1></a>
+				</div>
+			</div>
 		</header> <!-- Topbar  -->
-		<div id="newPost" class="reveal-modal" data-reveal>
+		<div id="newPost">
+			<span id="hidePostButton" class="close">x</span>
 			<?php get_template_part( 'templates/post-form' ); ?>
 		</div>

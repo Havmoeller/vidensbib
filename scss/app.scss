@@ -49,23 +49,18 @@
 .hero {
 	padding-top: 3em;
 }
+.error {
+	margin: 0.3em 0;
+}
 /***************************************
 			HEADER STYLING
 ***************************************/
 #header {
-
-	#top-menu {
-		height: 100%;
-		margin: 0;
-		display: block;
-		background-color: #222;
-		width: 100%;
-		float: right;
-		li {
-			font-size: 1.5rem;
-			line-height: 1.5rem;
-			display: inline-block;
-		}
+	width: 100%;
+	#newPostButton {
+		color: $black;
+		font-size: 3rem;
+		line-height: 3rem;
 	}
 }
 
@@ -101,10 +96,28 @@ body {
 			SUBMIT-FORM
 ***************************************/
 #newPost {
-	margin: 0 auto;
+	padding: 1em 3em;
+	background-color: $white;
+	border: 1px solid $black;
+	display: none;
+	position: absolute;
+		top: 4em;
+		left: 35%;
+		z-index: 999;
 	width: 30%;
+	#postContent {
+		width: 100%;
+		max-width: 100%;
+		height: 20em;
+	}
 }
-
+.close {
+	cursor: pointer;
+	width: 100%;
+	display: block;
+	font-size: 3em;
+	text-align: right;
+}
 /***************************************
 			TABLET STYLING
 ***************************************/

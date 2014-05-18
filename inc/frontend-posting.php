@@ -12,6 +12,7 @@ if ( isset( $_POST['submitted'] ) && isset( $_POST['post_nonce_field'] ) && wp_v
         'post_content' => $_POST['postContent'], // Get the content
         'post_type' => 'erfaringer', // Define post-type
         'tax_input' => array( 'category' => $_POST['postCategory'] ),
+        'tags_input' => $_POST['postTag'], // Get the tags
         'post_status' => 'publish' // Define post-status
     );
  

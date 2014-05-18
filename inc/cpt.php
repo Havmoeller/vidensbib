@@ -10,7 +10,7 @@ add_action( 'init', 'create_post_type' );
 			'public' => true,
 			'rewrite' => true,
 			'show_ui' => true, // UI in admin panel
-			'taxonomies' => array('category'),
+			'taxonomies' => array('category', 'post_tag'),
 			'capability_type' => 'post',
 			'hierarchical' => true,
 			'supports' => array('title','author', 'editor')

@@ -1,5 +1,4 @@
 <?php 
-get_template_part( 'inc/frontend-posting' );
 /***************************************
 			FRONT-PAGE
 ***************************************/
@@ -23,28 +22,19 @@ get_header(); ?>
 			while ( $loop->have_posts() ) : $loop->the_post(); ?>
 
 			<li>
+				<a href="<?php the_permalink(); ?>">
 				<div class="panel">
 					<h3><?php the_title(); ?></h3>
-					<em>Skrevet af: <?php $author = get_the_author(); ?></em>
 					<div>
 						<?php the_excerpt(); ?>
 					</div> 
 				</div>
+				</a>
 			</li>
 
 			<?php endwhile;
          	?>
          	</ul>
-         	 <?php 
- 			$terms = get_categories();
- 			if ( !empty( $terms ) && !is_wp_error( $terms ) ){
- 			    echo "<ul>";
- 			    foreach ( $terms as $term ) {
- 			      echo "<li>" . $term->name . "</li>";
- 			       
- 			    }
- 			    echo "</ul>";
- 			} ?>
 		</div>
 	</div>
 </section>
