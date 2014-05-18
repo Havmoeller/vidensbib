@@ -27,11 +27,10 @@
 				</div>
 				<div class="row">	
 					<div class="large-12 columns">
-						<div class="row">
-							<div class="large-12 columns">
-								<h1><?php the_title(); ?></h1>
-							</div>
-						</div>
+						<h1><?php the_title(); ?></h1>
+						<span><strong>Kategori: </strong><?php the_category(', '); ?></span>
+						<span> <?php the_tags('<strong>Tags: </strong> ', ', ', '<br />'); ?> </span>
+						<hr>
 						<div class="row">
 							<div class="large-8 columns">	
 								<?php the_content(); ?>

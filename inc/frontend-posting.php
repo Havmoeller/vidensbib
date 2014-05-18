@@ -20,10 +20,4 @@ if ( isset( $_POST['submitted'] ) && isset( $_POST['post_nonce_field'] ) && wp_v
  
 }
  
-// Redirects the user if double-post
-$post_id = wp_insert_post( $post_information );
-if ( $post_id ) {
-    wp_redirect( home_url() );
-    exit;
-} 
 ?>

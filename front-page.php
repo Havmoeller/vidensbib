@@ -15,7 +15,7 @@ get_header(); ?>
 	</div>
 	<div class="row">
 		<div class="large-12 columns">
-			<ul id="snippets" class="large-block-grid-4 medium-block-grid-3">
+			<ul id="snippets" class="large-block-grid-3 medium-block-grid-3">
 			<?php
 			$args = array( 'post_type' => 'erfaringer', 'posts_per_page' => 12 );
 			$loop = new WP_Query( $args );

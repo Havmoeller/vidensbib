@@ -93,6 +93,16 @@ body {
 	}
 }
 /***************************************
+			SINGLE-ERFARING
+***************************************/
+.single-erfaringer .content{
+	h1 {
+		text-transform: uppercase;
+		font-weight: 700;
+	}
+}
+
+/***************************************
 			SUBMIT-FORM
 ***************************************/
 #newPost {
@@ -101,10 +111,10 @@ body {
 	border: 1px solid $black;
 	display: none;
 	position: absolute;
-		top: 4em;
-		left: 35%;
+		top: 2em;
+		left: 15%;
 		z-index: 999;
-	width: 30%;
+	width: 70%;
 	#postContent {
 		width: 100%;
 		max-width: 100%;
@@ -115,7 +125,7 @@ body {
 	cursor: pointer;
 	width: 100%;
 	display: block;
-	font-size: 3em;
+	font-size: 2em;
 	text-align: right;
 }
 /***************************************

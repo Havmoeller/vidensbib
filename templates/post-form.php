@@ -2,6 +2,7 @@
 /***************************************
 		FRONT-END CONTENT-FORM
 ***************************************/ ?>
+<span id="hidePostButton" class="close">LUK X</span>
 <h3>Opret en ny erfaring</h3>
 <form action="" id="primaryPostForm" method="POST">
  
@@ -36,7 +37,14 @@
     <?php if ( $postTitleError != '' ) { ?>
     <span class="error"><?php echo $postTitleError; ?></span>
     <div class="clearfix"></div>
-	<?php } ?>
+	<?php } 
+	// Redirects the user if double-post
+	$post_id = wp_insert_post( $post_information );
+	if ( $post_id ) {
+	    wp_redirect( home_url() );
+	    exit;
+	}	
+	?>
 
 </form>
 
