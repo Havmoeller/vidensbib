@@ -23,16 +23,19 @@
 <!-- Body -->
 <body <?php body_class(); ?>>
 	<div id="page">
-		<header id="topbar">
-				<!-- Desktop-menu -->
-				<div>
-						<?php wp_nav_menu( array(
-							'menu' => 'Hovedmenu',
-							'container' => '',
-							'container_class' 	=> '',
-							'container_id'    	=> '',
-							'menu_class'      	=> '',
-							'menu_id'			=> 'desktop-menu',
-						)); ?>
-				</div>
+		<header id="header">
+				<?php
+				if ( is_user_logged_in() ) { ?>
+					<span>
+						<a href="#" data-reveal-id="newPost" class="button">Ny Erfaring + </a>
+					</span>
+				<?php } else { ?>
+				    <span>
+						<a href="<?php echo wp_login_url( get_permalink() ); ?>"  class="button">Login</a>
+					</span>
+				<?php }
+				?>
 		</header> <!-- Topbar  -->
+		<div id="newPost" class="reveal-modal" data-reveal>
+			<?php get_template_part( 'templates/post-form' ); ?>
+		</div>

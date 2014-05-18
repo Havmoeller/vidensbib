@@ -28,8 +28,8 @@
 			wp_deregister_script('jquery');
 
 			// Load JavaScripts
-			wp_enqueue_script( 'jquery', get_template_directory_uri().'/js/jquery.min.js');
-			wp_enqueue_script( 'modernizr', get_template_directory_uri().'/js/modernizr.min.js');
+			wp_enqueue_script( 'jquery', get_template_directory_uri().'/assets/js/jquery.js');
+			wp_enqueue_script( 'modernizr', get_template_directory_uri().'/assets/js/modernizr.js');
 
 			// if ( is_singular() ) wp_enqueue_script( "comment-reply" );
 
@@ -51,8 +51,9 @@
 
 	function footer_scripts () {
 	    // Load JavaScripts
-	    wp_enqueue_script( 'foundation', get_template_directory_uri() . '/js/foundation.min.js');
-	    wp_enqueue_script( 'app', get_template_directory_uri() . '/js/app.min.js');
+	    wp_enqueue_script( 'foundation', get_template_directory_uri() . '/assets/js/foundation.js');
+	    wp_enqueue_script( 'validation', 'http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js');
+	    wp_enqueue_script( 'app', get_template_directory_uri() . '/assets/js/app.min.js');
 	}
 
 	add_action('wp_footer', 'footer_scripts');
@@ -120,11 +121,11 @@
 	                $text = str_replace('\]\]\>', ']]&gt;', $text);
 	                $text = preg_replace('@<script[^>]*?>.*?</script>@si', '', $text);
 	                $text = strip_tags($text, '<p>');
-	                $excerpt_length = 80;
+	                $excerpt_length = 25;
 	                $words = explode(' ', $text, $excerpt_length + 1);
 	                if (count($words)> $excerpt_length) {
 	                        array_pop($words);
-	                        array_push($words, '<br><br><a href="'.get_permalink($post->ID) .'" class="button secondary small expand">' . __('Continue Reading', 'foundation') . '</a>');
+	                        array_push($words, '<br><br><a href="'.get_permalink($post->ID) .'" class="button secondary small expand"> Se mere.. </a>');
 	                        $text = implode(' ', $words);
 	                }
 	        }

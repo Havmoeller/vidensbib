@@ -46,12 +46,63 @@
 /***************************************
 			GLOBAL STYLING
 ***************************************/
+.hero {
+	padding-top: 3em;
+}
+/***************************************
+			HEADER STYLING
+***************************************/
+#header {
+
+	#top-menu {
+		height: 100%;
+		margin: 0;
+		display: block;
+		background-color: #222;
+		width: 100%;
+		float: right;
+		li {
+			font-size: 1.5rem;
+			line-height: 1.5rem;
+			display: inline-block;
+		}
+	}
+}
 
 /***************************************
 			PAGE STYLING
 ***************************************/
 body {
 	background-color: whitesmoke;
+}
+#snippets {
+	margin-top: 2.5em;
+	li {
+		.panel {
+			border-top: 6px solid red;
+		}
+		h3 {
+			text-align: center;
+			font-weight: 700;
+		}
+	}
+}
+/***************************************
+			SEARCH-FORM
+***************************************/
+#searchform {
+	#search {
+		height: 100%;
+		padding: 0.5rem 1.5rem;
+		font-size: 4rem;
+	}
+}
+/***************************************
+			SUBMIT-FORM
+***************************************/
+#newPost {
+	margin: 0 auto;
+	width: 30%;
 }
 
 /***************************************
