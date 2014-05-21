@@ -162,7 +162,7 @@
 			<article id="comment-<?php comment_ID(); ?>" class="comment">
 				<header class="header">
 					<span class="author"> <?php echo get_avatar( $comment, 80 ); ?> </span>
-					<span class="timestamp"><?php echo get_comment_date( "l, F jS, Y", $comment_ID ); ?></span>
+					<span class="timestamp"><?php echo get_comment_date("j. F Y", $comment_ID ); ?></span>
 				</header>
 				<section class="text">
 					<?php comment_text(); ?>

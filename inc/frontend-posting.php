@@ -17,6 +17,8 @@ if ( isset( $_POST['submitted'] ) && isset( $_POST['post_nonce_field'] ) && wp_v
     );
  
     wp_insert_post( $post_information );
+    wp_redirect( home_url() ); // Redirect user to frontpage
+    exit;
  
 }
  

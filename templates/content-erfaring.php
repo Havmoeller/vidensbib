@@ -31,7 +31,8 @@
 
 						<span id="kategori" class="meta left"><strong>Kategori: </strong><?php the_category(', '); ?></span>
 						<span id="tags" class="meta left"> <?php the_tags('<strong>Tags: </strong> ', ', ', '<br />'); ?> </span>
-						<span id="writtenby" class="meta right">Skrevet af: <?php the_author(); ?> - <?php the_date(); ?></span>
+						<span id="writtenby" class="meta right">Skrevet af: <?php the_author(); ?> - <?php the_date("j. F Y"); ?></span>
+						<span id="edit" class="meta right"> <strong><?php edit_post_link( "Redigér" ); ?> </strong></span>
 						<hr>
 						<div class="row">
 							<div class="large-8 columns">	

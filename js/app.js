@@ -1,14 +1,21 @@
 /***************************************
-			APP.JS
+			       APP.JS
 ***************************************/
-$(document).foundation({
-  equalizer : {
-    // Specify if Equalizer should make elements equal height once they become stacked.
-    equalize_on_stack: true
-  }
+$(document).foundation(); // Init the foundation
+
+/***************************************
+        WYSIWYG-TEXTAREA 
+***************************************/
+tinymce.init({
+  selector:'#postContent',
+  plugins: "code"
 });
 
 
+/***************************************
+            JQUERY 
+***************************************/
+   
 jQuery(document).ready(function() {
 
 	/***************************************
