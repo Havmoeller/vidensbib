@@ -13,7 +13,7 @@ add_action( 'init', 'create_post_type' );
 			'taxonomies' => array('category', 'post_tag'),
 			'capability_type' => 'post',
 			'hierarchical' => true,
-			'supports' => array('title','author', 'editor')
+			'supports' => array('title','author', 'editor', 'comments')
 		)
 	);
 }

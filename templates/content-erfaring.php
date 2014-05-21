@@ -28,8 +28,10 @@
 				<div class="row">	
 					<div class="large-12 columns">
 						<h1><?php the_title(); ?></h1>
-						<span><strong>Kategori: </strong><?php the_category(', '); ?></span>
-						<span> <?php the_tags('<strong>Tags: </strong> ', ', ', '<br />'); ?> </span>
+
+						<span id="kategori" class="meta left"><strong>Kategori: </strong><?php the_category(', '); ?></span>
+						<span id="tags" class="meta left"> <?php the_tags('<strong>Tags: </strong> ', ', ', '<br />'); ?> </span>
+						<span id="writtenby" class="meta right">Skrevet af: <?php the_author(); ?> - <?php the_date(); ?></span>
 						<hr>
 						<div class="row">
 							<div class="large-8 columns">	
@@ -45,10 +47,8 @@
 
 		</div>
 	</div>
-	<div class="row">
-		<div class="large-12 columns">
-			<?php comment_form(); ?>
-		</div>
-	</div>
+
+	<?php comments_template() ?>
+
 
 </section>

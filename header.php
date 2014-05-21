@@ -21,6 +21,9 @@
 
 		<?php wp_head(); ?>
 	</head>
+	<script>
+	        tinymce.init({selector:'#postContent'});
+	</script>
 <!-- Body -->
 <body <?php body_class(); ?>>
 	<div id="page">
@@ -42,10 +45,10 @@
 				<div class="large-4 columns">
 					<?php
 					if ( is_user_logged_in() ) { ?>
-							<a href="<?php echo site_url(); ?>/wp-admin" class="small alert button right">Admin</a>
-							<a href="<?php echo wp_logout_url( get_permalink() ); ?>" class="small alert button right">Logud</a>	
+							<a href="<?php echo site_url(); ?>/wp-admin" class="small secondary button right">Admin</a>
+							<a href="<?php echo wp_logout_url( get_permalink() ); ?>" class="small secondary button right">Logud</a>	
 					<?php } else { ?>
-							<a href="<?php echo wp_login_url( get_permalink() ); ?>" class="small alert button right">Login</a>
+							<a href="<?php echo wp_login_url( get_permalink() ); ?>" class="small secondary button right">Login</a>
 						</span>
 					<?php }
 					?>

@@ -44,7 +44,7 @@
 	</div>
 	<div class="row">
 		<div class="large-12 columns">
-			<?php comment_form(); ?>
+			<?php comments_template() ?>
 		</div>
 	</div>
 

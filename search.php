@@ -9,10 +9,15 @@
 
 get_header(); ?>
     <section id="searchresult" class="hero">
-        <div class="row">
-            <div class="large-8 columns">
-                    <h3 class="text-center"><?php echo $wp_query->found_posts; ?> resultater for "<?php echo get_search_query(); ?>"</h3>
+            <div class="row">
+                <div class="large-12 columns">
+                    <div class="hero">
+                        <?php get_search_form(); ?>
+                    </div>
+                </div>
                 <hr>
+            </div>
+            <h3 class="text-center"><?php echo $wp_query->found_posts; ?> resultater for "<?php echo get_search_query(); ?>"</h3>
 				<?php 
 					global $wp_query;
 					query_posts( 
@@ -22,36 +27,35 @@ get_header(); ?>
 					    )
 					);
 				 ?>
-                 <?php /* Start the Loop */ ?>
-                 <?php while ( have_posts() ) : the_post(); ?>
-                    <?php get_template_part( 'content', get_post_format() ); ?>
-                 <?php endwhile; ?>
 
-                    <div class="row">
-                        <div class="large-4 large-centered columns">
-                            <ul class="pagination">
-                              <li class="arrow unavailable"><a href="">&laquo;</a></li>
-                              <li class="current"><a href="">1</a></li>
-                              <li class="unavailable"><a href="">&hellip;</a></li>
-                              <li><a href="">3</a></li>
-                              <li class="arrow"><a href="">&raquo;</a></li>
-                            </ul>
+                    <section role="main">
+                        <div class="row">
+                            <div class="large-12 columns">
+                                <ul id="snippets" class="large-block-grid-3 medium-block-grid-3">
+                                <?php
+                                $args = array( 'post_type' => 'erfaringer', 'posts_per_page' => 12 );
+                                $loop = new WP_Query( $args );
+                                while ( $loop->have_posts() ) : $loop->the_post(); ?>
+
+                                <li style="border-color: <?php echo category_description(); ?>">
+                                    <a href="<?php the_permalink(); ?>">
+                                    <div class="panel">
+                                        <h3><?php the_title(); ?></h3>
+                                        <div>
+                                            <?php the_excerpt(); ?>
+                                        </div> 
+                                    </div>
+                                    </a>
+                                </li>
+
+                                <?php endwhile;
+                                ?>
+                                </ul>
+                            </div>
                         </div>
-                    </div>
+                    </section>
             </div>
-        <!-- Results done -->
-            <div class="large-4 columns">
-                <div class="panel">
-                    <h4>Kontaktoplysninger</h4>
-                    <hr>
-                    <ul>
-                        <li>Frederiksborgvej 5, 3450 Allerød</li>
-                        <li>Tlf: 23 23 00 55</li>
-                        <li>E-mail:<a href="mailto:post@jadea.dk?Subject=Hej%20Jadea" target="_blank">post@jadea.dk</a></li>
-                        <li>CVR: 25 07 23 91</li>
-                    </ul>
-                </div>
-            </div>
+
         </div>
     </section>
 </div>
