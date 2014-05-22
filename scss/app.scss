@@ -52,16 +52,6 @@
 .error {
 	margin: 0.3em 0;
 }
-.box {
-	background-color: $secondary-color;
-	color: $white;
-	padding: 1em 1.5em;
-	min-height: 10em;
-	border-top: 6px solid $secondary-color;
-	.button {
-		margin: 0;
-	}
-}
 
 /***************************************
 			HEADER STYLING
@@ -70,7 +60,7 @@
 	width: 100%;
 	#newPostButton {
 		display: table-cell;
-		color: $black;
+		color: $smokedgray;
 		font-size: 1.3rem;
 		line-height: 2.3rem;
 		span {
@@ -89,8 +79,8 @@
 			FOOTER STYLING
 ***************************************/
 #footer {
-	color: $white;
-	background-color: $black;
+	color: $lightsmoke;
+	background-color: $smokedgray;
 	p {
 		padding: 1em 0;
 		margin: 0;
@@ -105,14 +95,26 @@
 body {
 	background-color: whitesmoke;
 }
+.box {
+	background-color: $secondary-color;
+	color: $lightsmoke;
+	padding: 1em 1.5em;
+	min-height: 10em;
+	border-top: 6px solid $secondary-color;
+	#timestamp {
+		display: block;
+		text-align: right;
+		font-size: 0.8rem;
+	}
 
+}
 #blocks {
 	margin-top: 2.5em;
 	li {
 		h3 {
 			text-align: center;
 			font-weight: 700;
-			color: $white;
+			color: $lightsmoke;
 		}
 	}
 }
@@ -152,6 +154,9 @@ body {
 		padding-top: 2em;
 		background-color: $primary-color;
 	}
+	#heading-wrapper {
+		margin-top: 1em;
+	}
 }
 /***************************************
 			MCE-STYLING
@@ -171,12 +176,11 @@ body {
 #comment-wrapper {
 	padding: 1em;
 	background-color: $primary-color;
-	color: $white;
+	color: $lightsmoke;
 	a {
 		color: darken($secondary-color, 20);
 	}
 	.comments-title, .reply-title {
-		color: ligthen($secondary-color, 10);
 		font-weight: 700;
 		text-transform: uppercase;
 	}
@@ -229,14 +233,14 @@ body {
 ***************************************/
 #newPost {
 	padding: 1em 3em;
-	background-color: $white;
-	border: 1px solid $black;
+	background-color: $lightsmoke;
+	border: 1px solid $smokedgray;
 	display: none;
 	position: absolute;
 		top: 2em;
-		left: 15%;
+		left: 20%;
 		z-index: 999;
-	width: 70%;
+	width: 60%;
 	#postContent {
 		width: 100%;
 		max-width: 100%;
@@ -256,10 +260,10 @@ body {
 
 /** Dave's WordPress Live Search CSS **/
 ul.search_results {
-	@include grid-column(12);
+	width: 100%;
+	max-width: 60.7rem;
 	display: block;
 	background-color:#fff;
-	width: $row-width;
 	max-height: 500px;
 	position:absolute;
 	top:20px;
@@ -273,102 +277,87 @@ ul.search_results {
 
 	padding: 0px;
 	margin: 0px;
-
-	-moz-box-shadow: 5px 5px 3px #222;
-	-webkit-box-shadow: 5px 5px 3px #222;
-	box-shadow: 5px 5px 3px #222;
 	}
 
-ul.search_results li
-{
-display: block;
-padding: 5px 10px 5px 10px;
-margin: 0px 0px 0px 0px;
-border-top: 1px solid #eee;
-border-bottom: 1px solid #aaa;
-text-align: left;	
-
-color: #000;
-background-color: #ddd;
-text-decoration: none;
-
+ul.search_results li {
+	display: block;
+	padding: 5px 0px 5px 10px;
+	margin: 0px 0px 0px 0px;
+	border-top: 1px solid #eee;
+	border-bottom: 1px solid #aaa;
+	text-align: left;	
+	color: $body-font-color;
+	text-decoration: none;
+	&:hover {
+		background-color: $secondary-color;	
+	}
 }
 
-ul.search_results li:hover
-{
-background-color: #fff;	
+
+ul.search_results li a, ul.search_results li a:visited {
+	display: block;
+	color: $body-font-color;
+	margin-left: 0px;
+	padding-left: 0px;
+	text-decoration: none;
+	font-weight: bold;
 }
 
-ul.search_results li a, ul.search_results li a:visited
-{
-display: block;
-color: #000;
-margin-left: 0px;
-padding-left: 0px;
-text-decoration: none;
-font-weight: bold;
+ul.search_results p#daves-wordpress-live-search_author {
+	margin: 0px;
+	font-size: 90%;
+	font-weight: bold;
 }
 
-ul.search_results p#daves-wordpress-live-search_author
-{
-margin: 0px;
-font-size: 90%;
-font-weight: bold;
-}
-
-ul.search_results p#daves-wordpress-live-search_date
-{
-margin: 0px;
-font-size: 90%;
+ul.search_results p#daves-wordpress-live-search_date {
+	margin: 0px;
+	font-size: 90%;
 }
 
 /* BEGIN post thumbnails */
 ul.search_results li.post_with_thumb a {
-width:150px;
-float:left;
-margin-bottom: 5px;
+	width:150px;
+	float:left;
+	margin-bottom: 5px;
 }
 
-ul.search_results li.post_with_thumb img.post_thumb
-{
-float: left;
-margin: 3px 10px 10px 0px;
-height: 48px;
-width: 48px;
-border: 1px solid #888;
+ul.search_results li.post_with_thumb img.post_thumb {
+	float: left;
+	margin: 3px 10px 10px 0px;
+	height: 48px;
+	width: 48px;
+	border: 1px solid #888;
 }
 /* END post thumbnails */
 
 /* BEGIN post excerpt */
-ul.search_results .excerpt, ul.search_results .meta
-{
-font-size: 75%;
-width: 100%;
+ul.search_results .excerpt, ul.search_results .meta {
+	font-size: 75%;
+	width: 100%;
 }
 /* END post excerpt */
 
-ul.search_results .clearfix
-{
-float: none !important;
-clear: both !important;
+ul.search_results .clearfix {
+	float: none !important;
+	clear: both !important;
 }
 
 .search_footer {
-background-color: #888;
-width: 100%;
-text-align: right;
-padding: .5em 0;
-font-size: .9em;
+	background-color: #888;
+	width: 100%;
+	text-align: right;
+	padding: .5em 0;
+	font-size: .9em;
 }
 
 .search_footer a,
 .search_footer a:visited {
-color: #fff;	
-margin-right: 1em;
+	color: #fff;	
+	margin-right: 1em;
 }
 
 #search_results_activity_indicator{
-z-index:999999;
+	display: none;
 }
 /***************************************
 			TABLET STYLING

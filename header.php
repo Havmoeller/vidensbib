@@ -21,9 +21,6 @@
 
 		<?php wp_head(); ?>
 	</head>
-	<script>
-	        tinymce.init({selector:'#postContent'});
-	</script>
 <!-- Body -->
 <body <?php body_class(); ?>>
 	<div id="page">

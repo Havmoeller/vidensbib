@@ -27,7 +27,7 @@ function category_form_custom_field_add( $taxonomy ) {
 ?>
 <div class="form-field">
   <label for="category_custom_color">Kategori farve</label>
-  <input name="category_custom_color" id="category_custom_color" type="text" value="" size="40" aria-required="true" />
+  <input name="category_custom_color" id="category_custom_color" type="color" value="" size="40" aria-required="true" />
   <p class="description">Angiv en farve til kategorien eks. "#808080".</p>
 </div>
 <?php

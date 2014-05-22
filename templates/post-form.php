@@ -11,6 +11,7 @@
  
  		<label for="postTitle">Vælg en kategori</label>
  		<select type="text" name="postCategory" id="postCategory" class="required" value="<?php if ( isset( $_POST['postCategory'] ) ) echo $_POST['postCategory']; ?>"/>
+            <option value="" disabled selected>Vælg en kategori</option>
  			<?php
  			$args = array(
  			  'hide_empty' => 0, // Show also the unused categories

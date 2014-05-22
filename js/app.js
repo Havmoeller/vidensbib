@@ -8,7 +8,11 @@ $(document).foundation(); // Init the foundation
 ***************************************/
 tinymce.init({
   selector:'#postContent',
-  plugins: "code"
+  toolbar: false,
+  plugins: "code",
+  menu : { // this is the complete default configuration
+      format : {title : 'Format', items : 'bold italic underline | formats | removeformat'},
+  }
 });
 
 
@@ -39,6 +43,13 @@ jQuery(document).ready(function() {
 				FRONTEND POSTING
 	***************************************/
 
+  // Pop-up when submit
+  $("#primaryPostForm").bind('ajax:complete', function() {
+    alert( "Handler for .submit() called." );
+         // tasks to do 
+
+
+   });
  	// Init the validation for Frontend posting
     jQuery("#primaryPostForm").validate({
     	messages: {

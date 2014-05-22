@@ -24,14 +24,15 @@
 				</div>
 				<div class="row">	
 					<div class="large-12 columns">
-						<h1><?php the_title(); ?></h1>
-						<div id="meta">
-							<span id="kategori" class="left"> <i class="icon-paper-clip"></i> <strong>Kategori: </strong><?php the_category(', '); ?></span>
-							<span id="tags" class="left"> <i class="icon-tag"></i> <?php the_tags('<strong>Tags: </strong> ', ', ', '<br />'); ?> </span>
-							<span id="edit" class="right"> <strong><?php edit_post_link( "Redigér" ); ?> </strong></span>
-							<span id="writtenby" class="right">Skrevet af: <?php the_author(); ?> - <?php the_date("j. F Y"); ?></span>
+						<div id="heading-wrapper">
+							<h1><?php the_title(); ?></h1>
+							<div id="meta">
+								<span id="kategori" class="left"> <i class="icon-paper-clip"></i> <strong>Kategori: </strong><?php the_category(', '); ?></span>
+								<span id="tags" class="left"> <i class="icon-tag"></i> <?php the_tags('<strong>Tags: </strong> ', ', ', '<br />'); ?> </span>
+								<span id="edit" class="right"> <strong><?php edit_post_link( "Redigér" ); ?> </strong></span>
+								<span id="writtenby" class="right">Skrevet af: <?php the_author(); ?> - <?php the_date("j. F Y"); ?></span>
+							</div>
 						</div>
-
 					</div>
 				</div>
 				<div id="content-wrapper">
