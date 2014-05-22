@@ -2,7 +2,7 @@
 /***************************************
 		FRONT-END CONTENT-FORM
 ***************************************/ ?>
-<span id="hidePostButton" class="close">LUK X</span>
+<span id="hidePostButton" class="close"><i class="icon-cross"></i></span>
 <h3>Opret en ny erfaring</h3>
 <form action="" id="primaryPostForm" method="POST">
  
@@ -30,7 +30,7 @@
  		<input type="text" name="postTag" id="postTag" class="required" value="<?php if ( isset( $_POST['postTag'] ) ) echo $_POST['postTag']; ?>"/>
        
         <input type="hidden" name="submitted" id="submitted" value="true" />
-        <button type="submit" class="expand">Opret din erfaring</button>
+        <button type="submit" class="success expand">Opret din erfaring</button>
         <?php wp_nonce_field( 'post_nonce', 'post_nonce_field' ); ?>
 
         

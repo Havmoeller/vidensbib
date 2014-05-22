@@ -32,23 +32,23 @@
 				<div class="large-6 columns">
 					<?php
 					if ( is_user_logged_in() ) { ?>
-						<span>
-							<a href="#" id="newPostButton">+</a>
-						</span>
+						<a href="#" id="newPostButton"><i class="icon-plus"></i><span>Opret ny erfaring</span></a>
 					<?php } else { ?>
 					<?php }
 					?>
 				</div>
 				<div class="large-6 columns">
-					<?php
-					if ( is_user_logged_in() ) { ?>
-							<a href="<?php echo site_url(); ?>/wp-admin" class="small secondary button right">Admin</a>
-							<a href="<?php echo wp_logout_url( get_permalink() ); ?>" class="small secondary button right">Logud</a>	
-					<?php } else { ?>
-							<a href="<?php echo wp_login_url( get_permalink() ); ?>" class="small secondary button right">Login</a>
-						</span>
-					<?php }
-					?>
+					<div id="controls">
+						<?php
+						if ( is_user_logged_in() ) { ?>
+								<a href="<?php echo site_url(); ?>/wp-admin" class="small secondary button right">Admin <i class="icon-cog"></i></a>
+								<a href="<?php echo wp_logout_url( get_permalink() ); ?>" class="small secondary button right">Logud <i class="icon-lock"></i></a>	
+						<?php } else { ?>
+								<a href="<?php echo wp_login_url( get_permalink() ); ?>" class="small secondary button right">Login <i class="icon-unlock"></i></a>
+							</span>
+						<?php }
+						?>
+					</div>
 				</div>
 			</div>
 			<div class="row">

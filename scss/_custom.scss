@@ -7,9 +7,19 @@
 $white: #F7F7F7;
 $black: rgba(0,0,0,0.5);
 
-$gray: #424242;
-$gray-font: #DBDBDB;
+$concrete: #95a5a6;
+$asphalt: #34495e;
+$grass: #27ae60;
+$blood: #c0392b;
+$asbestos: #7f8c8d;
 
-$primary-color: #424242;
-$secondary-color: #DBDBDB;
+$primary-color: $concrete;
+$secondary-color: $asbestos;
+$succes-color: $grass;
+$alert-color: $blood;
+
 /*-------------------SETTINGS------------------*/
+$header-font-family: $sintony;
+$header-font-weight: 700;
+
+$body-font-family: $lato;

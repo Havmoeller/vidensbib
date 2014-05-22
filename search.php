@@ -8,7 +8,7 @@
  */
 
 get_header(); ?>
-    <section id="searchresult" class="hero">
+    <section id="searchresult">
             <div class="row">
                 <div class="large-12 columns">
                     <div class="hero">

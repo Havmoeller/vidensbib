@@ -53,9 +53,14 @@
 	margin: 0.3em 0;
 }
 .box {
-	background-color: $gray-font;
-	color: $gray;
+	background-color: $secondary-color;
+	color: $white;
 	padding: 1em 1.5em;
+	min-height: 10em;
+	border-top: 6px solid $secondary-color;
+	.button {
+		margin: 0;
+	}
 }
 
 /***************************************
@@ -64,17 +69,28 @@
 #header {
 	width: 100%;
 	#newPostButton {
+		display: table-cell;
 		color: $black;
-		font-size: 3rem;
-		line-height: 3rem;
+		font-size: 1.3rem;
+		line-height: 2.3rem;
+		span {
+			margin-left: 0.5rem;
+			vertical-align: middle;
+		}
+	}
+	#controls {
+		i {
+			margin-left: 0.3rem;
+			font-size: 1rem;
+		}
 	}
 }
 /***************************************
 			FOOTER STYLING
 ***************************************/
 #footer {
-	color: lighten($gray-font,15);
-	background-color: $gray;
+	color: $white;
+	background-color: $black;
 	p {
 		padding: 1em 0;
 		margin: 0;
@@ -89,20 +105,14 @@
 body {
 	background-color: whitesmoke;
 }
+
 #blocks {
 	margin-top: 2.5em;
 	li {
-		.box {
-			min-height: 10em;
-			border-top: 6px solid $gray-font;
-			.button {
-				margin: 0;
-			}
-		}
 		h3 {
 			text-align: center;
 			font-weight: 700;
-			color: $gray;
+			color: $white;
 		}
 	}
 }
@@ -124,11 +134,23 @@ body {
 		text-transform: uppercase;
 		font-weight: 700;
 	}
-	span {
-		margin-right: 0.5em;
-	}
-	.meta {
+	#meta {
 		padding-bottom: 1em;
+		span {
+			margin-right: 0.5em;
+		}
+	}
+	#back {
+		display: table-cell;
+		span {
+			vertical-align: middle;
+			margin-left: 0.3rem;
+		}
+	}
+	#content-wrapper {
+		margin-top: 2em;
+		padding-top: 2em;
+		background-color: $primary-color;
 	}
 }
 /***************************************
@@ -148,14 +170,13 @@ body {
 ***************************************/
 #comment-wrapper {
 	padding: 1em;
-	border-top: 3px solid lighten($gray, 15);
-	background-color: $gray;
-	color: $gray-font;
+	background-color: $primary-color;
+	color: $white;
 	a {
-		color: darken($gray-font, 20);
+		color: darken($secondary-color, 20);
 	}
 	.comments-title, .reply-title {
-		color: ligthen($gray-font, 10);
+		color: ligthen($secondary-color, 10);
 		font-weight: 700;
 		text-transform: uppercase;
 	}
@@ -163,9 +184,16 @@ body {
 .commentlist, .children {
 	list-style: none;
 }
+.children {
+	li {
+		padding-top: 0;
+		margin-top: 0;
+	}
+}
 .comment {
-	padding: 1em 0;
 	.header {
+		color: $body-font-color;
+		font-weight: 700;
 		.author {
 			padding: 1em 1em 1em 0;
 			height: 100%;
@@ -177,10 +205,22 @@ body {
 	.text {
 		margin-top: 0.5em;
 	}
+	.reply {
+		font-size: 0.8rem;
+		font-weight: 700;
+		color: $body-font-color;
+		:hover {
+			color: darken($body-font-color, 10);
+		}
+
+	}
 }
 #respond {
 	#commentarea {
 		min-height: 15em;
+	}
+	a {
+		font-weight: bold;
 	}
 }
 

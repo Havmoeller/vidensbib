@@ -14,11 +14,14 @@ get_header(); ?>
 		</div>
 	</div>
 	<div class="row">
+		<?php
+		$postnumber = 3 // the number of posts ?>
 		<div class="large-12 columns">
+			<hr>
+			<h3 class="text-center"> De <?php echo $postnumber ?> nyeste erfaringer </h3>
 			<ul id="blocks" class="large-block-grid-3 medium-block-grid-3">
-			<?php
-			$args = array( 'post_type' => 'erfaringer', 'posts_per_page' => 3 );
-			$loop = new WP_Query( $args );
+			<?php $args = array( 'post_type' => 'erfaringer', 'posts_per_page' => $postnumber );
+			$loop = new WP_Query( $args ); 
 			while ( $loop->have_posts() ) : $loop->the_post(); ?>
 			<?php
 			$categories = get_the_category();

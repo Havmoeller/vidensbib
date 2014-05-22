@@ -182,17 +182,21 @@
 		?>
 		<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
 			<article id="comment-<?php comment_ID(); ?>" class="comment">
-				<header class="header">
-					<span class="author"> <?php echo get_avatar( $comment, 80 ); ?> </span>
-					<span class="timestamp"><?php echo get_comment_date("j. F Y", $comment_ID ); ?></span>
-				</header>
-				<section class="text">
-					<?php comment_text(); ?>
-				</section><!-- .comment-content -->
+				<div class="panel">
+					<header class="header">
+						<span class="author"> <?php echo get_avatar( $comment, 80 ); ?> </span>
+						<span class="authorname"><?php comment_author(); ?> </span>
+						<span class="timestamp"><?php echo get_comment_date("j. F Y", $comment_ID ); ?></span>
+					</header>
+					<hr>
+					<section class="text">
+						<?php comment_text(); ?>
+					</section><!-- .comment-content -->
 
-				<div class="reply">
-					<?php comment_reply_link( array_merge( $args, array( 'reply_text' => __( 'Svar', 'foundation' ), 'after' => ' &darr; <br>', 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
+					<div class="reply">
+						<?php comment_reply_link( array_merge( $args, array( 'reply_text' => __('Kommentér dette indlæg'), 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
 
+					</div>
 				</div>
 			</article>
 		<?php
