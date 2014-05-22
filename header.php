@@ -29,7 +29,7 @@
 	<div id="page">
 		<header id="header">
 			<div class="row">
-				<div class="large-4 columns">
+				<div class="large-6 columns">
 					<?php
 					if ( is_user_logged_in() ) { ?>
 						<span>
@@ -39,10 +39,7 @@
 					<?php }
 					?>
 				</div>
-				<div class="large-4 columns">
-					<a href="<?php echo home_url(); ?>"><h1 class="text-center">Vidensbanken</h1></a>
-				</div>
-				<div class="large-4 columns">
+				<div class="large-6 columns">
 					<?php
 					if ( is_user_logged_in() ) { ?>
 							<a href="<?php echo site_url(); ?>/wp-admin" class="small secondary button right">Admin</a>
@@ -52,6 +49,11 @@
 						</span>
 					<?php }
 					?>
+				</div>
+			</div>
+			<div class="row">
+				<div class="large-12 columns">
+					<a href="<?php echo home_url(); ?>"><h1 id="title" class="text-center">Vidensbanken</h1></a>
 				</div>
 			</div>
 		</header> <!-- Topbar  -->

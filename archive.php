@@ -17,7 +17,7 @@ get_header(); ?>
 		<div class="large-12 columns">
 			<ul id="blocks" class="large-block-grid-3 medium-block-grid-3">
 			<?php if ( have_posts() ) : ?>
-
+				
 				<?php while ( have_posts() ) : the_post(); ?>
 					<?php
 					$categories = get_the_category();

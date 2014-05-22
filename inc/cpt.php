@@ -42,7 +42,7 @@ function category_form_custom_field_edit( $tag, $taxonomy ) {
 <tr class="form-field">
   <th scope="row" valign="top"><label for="category_custom_color">Custom color</label></th>
   <td>
-    <input type="text" name="category_custom_color" id="category_custom_color" value="<?php echo esc_attr( $category_custom_color ) ? esc_attr( $category_custom_color ) : ''; ?>" size="40" aria-required="true" />
+    <input type="color" name="category_custom_color" id="category_custom_color" value="<?php echo esc_attr( $category_custom_color ) ? esc_attr( $category_custom_color ) : ''; ?>" size="40" aria-required="true" />
     <p class="description">Angiv en farve til kategorien eks. "#808080".</p>
   </td>
 </tr>

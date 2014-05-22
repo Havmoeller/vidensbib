@@ -105,7 +105,29 @@
 	add_action( 'widgets_init', 'widgets' );
 
 	endif;
+	/** 
+	 * Make archieve include CPT 
+	 */
+	function namespace_add_custom_types( $query ) {
+	  if( is_category() || is_tag() && empty( $query->query_vars['suppress_filters'] ) ) {
+	    $query->set( 'post_type', array(
+	     'post', 'erfaringer'
+			));
+		  return $query;
+		}
+	}
+	add_filter( 'pre_get_posts', 'namespace_add_custom_types' );
 
+	// Define what post types to search
+	function searchAll( $query ) {
+		if ( $query->is_search ) {
+			$query->set( 'post_type', array( 'post','erfaringer'));
+		}
+		return $query;
+	}
+
+	// The hook needed to search ALL content
+	add_filter( 'the_search_query', 'searchAll' );
 
 
 	/**
