@@ -1,5 +1,7 @@
 <?php 
-// Custom post-type Erfaring
+/***************************************
+		REGISTER CPT ERFARINGER
+***************************************/
 add_action( 'init', 'create_post_type' );
 	function create_post_type() {
 	register_post_type( 'erfaringer',
@@ -19,7 +21,10 @@ add_action( 'init', 'create_post_type' );
 	);
 }
 
-// Add Custom Field To Category Form
+/***************************************
+	ADD CUSTOM FIELD TO CATEGORI
+***************************************/
+
 add_action( 'category_add_form_fields', 'category_form_custom_field_add', 10 );
 add_action( 'category_edit_form_fields', 'category_form_custom_field_edit', 10, 2 );
 

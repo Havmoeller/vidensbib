@@ -1,4 +1,10 @@
 <?php 
+
+/***************************************
+     INSERT THE FRONTEND POSTING
+***************************************/
+
+
 // Validate the inserting 
 if ( isset( $_POST['submitted'] ) && isset( $_POST['post_nonce_field'] ) && wp_verify_nonce( $_POST['post_nonce_field'], 'post_nonce' ) ) {
  

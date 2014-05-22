@@ -10,9 +10,9 @@
 	 * @since Foundation, for WordPress 4.0
 	 */
 
-	/**
-	 * Enqueue Scripts and Styles for Front-End
-	 */
+	/***************************************
+			ENQUEUE SCRIPTS AND STYLES
+	***************************************/
 
 	if ( ! function_exists( 'assets' ) ) :
 
@@ -44,9 +44,9 @@
 
 	endif;
 
-	/**
-	 * Enqueue Scripts in footer
-	 */
+	/***************************************
+			ENQUEUE SCRIPTS IN FOOTER
+	***************************************/
 
 	if ( ! function_exists( 'footer_scripts' ) ) :
 
@@ -61,54 +61,11 @@
 
 	endif;
 
-
-	/**
-	 * Register Navigation Menus
-	 */
-
-	if ( ! function_exists( 'menus' ) ) :
-
-	// Register wp_nav_menus
-	function menus() {
-		register_nav_menus(
-			array(
-				'header-menu' => __( 'Hovedmenu', '' )
-			)
-		);
-	}
-
-	add_action( 'init', 'menus' );
-
-	endif;
-
-
-	/**
-	 * Register Sidebars
-	 */
-
-	if ( ! function_exists( 'widgets' ) ) :
-
-	function widgets() {
-
-		// Sidebar Oplevelse
-		register_sidebar( array(
-				'id' => 'footer_widget',
-				'name' => __( 'Footer', '' ),
-				'description' => __( 'This widget is located in the footer', '' ),
-				'before_widget' => '<footer id="footer"> <div class="row">',
-				'after_widget' => '</div></footer>',
-				'before_title' => '<h1 class="text-center">',
-				'after_title' => '</h1>',
-			) );
-		}
-
-	add_action( 'widgets_init', 'widgets' );
-
-	endif;
-	/** 
-	 * Make archieve include CPT 
-	 */
-	function namespace_add_custom_types( $query ) {
+	/***************************************
+			MAKE ARCHIVE PAGE FOR CPT
+	***************************************/
+	
+	function custom_archieve( $query ) {
 	  if( is_category() || is_tag() && empty( $query->query_vars['suppress_filters'] ) ) {
 	    $query->set( 'post_type', array(
 	     'post', 'erfaringer'
@@ -116,8 +73,12 @@
 		  return $query;
 		}
 	}
-	add_filter( 'pre_get_posts', 'namespace_add_custom_types' );
+	add_filter( 'pre_get_posts', 'custom_archive' );
 
+
+	/***************************************
+				SEARCH ALL
+	***************************************/
 	// Define what post types to search
 	function searchAll( $query ) {
 		if ( $query->is_search ) {
@@ -129,40 +90,9 @@
 	// The hook needed to search ALL content
 	add_filter( 'the_search_query', 'searchAll' );
 
-
-	/**
-	 * Custom Post Excerpt
-	 */
-
-	if ( ! function_exists( 'custom_excerpt' ) ) :
-
-	function custom_excerpt($text) {
-	        global $post;
-	        if ( '' == $text ) {
-	                $text = get_the_content('');
-	                $text = apply_filters('the_content', $text);
-	                $text = str_replace('\]\]\>', ']]&gt;', $text);
-	                $text = preg_replace('@<script[^>]*?>.*?</script>@si', '', $text);
-	                $text = strip_tags($text, '<p>');
-	                $excerpt_length = 25;
-	                $words = explode(' ', $text, $excerpt_length + 1);
-	                if (count($words)> $excerpt_length) {
-	                        array_pop($words);
-	                        array_push($words, '<br><br><a href="'.get_permalink($post->ID) .'" class="button secondary small expand"> Se mere.. </a>');
-	                        $text = implode(' ', $words);
-	                }
-	        }
-	        return $text;
-	}
-
-	remove_filter('get_the_excerpt', 'wp_trim_excerpt');
-	add_filter('get_the_excerpt', 'custom_excerpt');
-
-	endif;
-
-	/** 
-	 * Comments Template
-	 */
+	/***************************************
+				COMMENTS TEMPLATE
+	***************************************/
  
 	if ( ! function_exists( 'foundation_comment' ) ) :
 
@@ -174,7 +104,7 @@
 			// Display trackbacks differently than normal comments.
 		?>
 		<li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
-			<p><?php _e( 'Pingback:', 'foundation' ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( '(Redigere)', 'foundation' ), '<span>', '</span>' ); ?></p>
+			<p><?php _e( 'Pingback:', 'foundation' ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( '(Redigér)', 'foundation' ), '<span>', '</span>' ); ?></p>
 		<?php
 			break;
 			default :
@@ -226,5 +156,8 @@
 	}
 	add_action( 'admin_head', 'admin_icon' );
 
-	require('inc/cpt.php');
+	/***************************************
+			ADDITIONAL INCLUDES
+	***************************************/
+	require('inc/cpt.php'); 
 	?>
