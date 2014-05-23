@@ -1,7 +1,7 @@
 /***************************************
 			       APP.JS
 ***************************************/
-$(document).foundation(); // Init the foundation
+// $(document).foundation(); // Init the foundation
 
 /***************************************
         WYSIWYG-TEXTAREA 

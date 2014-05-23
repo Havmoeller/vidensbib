@@ -1,13 +1,9 @@
 <?php 
-
 /***************************************
      INSERT THE FRONTEND POSTING
 ***************************************/
-
-
 // Validate the inserting 
 if ( isset( $_POST['submitted'] ) && isset( $_POST['post_nonce_field'] ) && wp_verify_nonce( $_POST['post_nonce_field'], 'post_nonce' ) ) {
- 
     if ( trim( $_POST['postTitle'] ) === '' ) {
         $postTitleError = 'Please enter a title.';
         $hasError = true;
@@ -25,7 +21,5 @@ if ( isset( $_POST['submitted'] ) && isset( $_POST['post_nonce_field'] ) && wp_v
     wp_insert_post( $post_information );
     wp_redirect( home_url() ); // Redirect user to frontpage
     exit;
- 
 }
- 
 ?>

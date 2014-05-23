@@ -3,8 +3,8 @@
  * Page Header
  */
 ?>
+<?php get_template_part( 'inc/frontend-posting' );?>
 <!DOCTYPE html>
-<?php get_template_part( 'inc/frontend-posting' ); ?>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!-->
 <html class="no-js" <?php language_attributes(); ?>> <!--<![endif]-->

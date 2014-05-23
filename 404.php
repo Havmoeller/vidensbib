@@ -10,8 +10,15 @@
  */
 get_header(); ?>
 <section id="error-page">
-    <div class="row" role="content">
-    	<h1 class="text-center">Sorry, we couldn't find what you were looking for.</h1>
+	<div class="row">
+		<div class="large-12 columns">
+			<div class="hero">
+				<?php get_search_form(); ?>
+			</div>
+		</div>
+	</div>
+    <div class="row" role="content" class="hero">
+    	<h1 class="text-center">Siden du søger findes desværre ikke!<br> Prøv at søg i feltet herover</h1>
     </div>
 </section>
 
