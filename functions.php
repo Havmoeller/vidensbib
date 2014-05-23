@@ -65,7 +65,7 @@
 			MAKE ARCHIVE PAGE FOR CPT
 	***************************************/
 	
-	function custom_archieve( $query ) {
+	function custom_archive( $query ) {
 	  if( is_category() || is_tag() && empty( $query->query_vars['suppress_filters'] ) ) {
 	    $query->set( 'post_type', array(
 	     'post', 'erfaringer'
