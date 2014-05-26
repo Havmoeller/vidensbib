@@ -31,7 +31,6 @@ var target = {
     js_uglify_src : [                                   // all js files that should not be concatinated
         'bower_components/foundation/js/foundation.js',
         'bower_components/jquery/dist/jquery.js',
-        'bower_components/trianglify/trianglify.js',
         'bower_components/modernizr/modernizr.js'
     ],
     js_concat_src : [                                   // all js files that should be concatinated
@@ -47,7 +46,9 @@ var target = {
 gulp.task('sass', function() {
     gulp.src(target.sass_src)                           // get the files
         .pipe(plumber())                                // make sure gulp keeps running on errors
-        .pipe(sass({includePaths: ['scss']}))           // compile all sass
+        .pipe(sass({
+            includePaths: ['scss']
+        }))           // compile all sass
         .pipe(autoprefixer(                             // complete css with correct vendor prefixes
             'last 2 version',
             '> 1%',
