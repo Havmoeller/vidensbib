@@ -1,4 +1,4 @@
-# Vidensbibliotek
+# Vidensbanken
 
-More info coming up..
+To init this projekt remember to run npm install
 
